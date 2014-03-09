@@ -6,11 +6,27 @@
 
 @interface TSStack ()
 
-@property (strong) NSMutableArray *internalArray;
+@property(nonatomic, strong) NSMutableArray *internalArray;
 
 @end
 
 @implementation TSStack
+
++ (TSStack *)stackWithObjects:(NSArray *)objects {
+    return [[TSStack alloc] initWithObjects:objects];
+}
+
++ (TSStack *)stack {
+    return [[TSStack alloc] init];
+}
+
+- (id)initWithObjects:(NSArray *)objects {
+    self = [super init];
+    if (self) {
+        _internalArray = [objects mutableCopy];
+    }
+    return self;
+}
 
 - (NSMutableArray *)internalArray {
     if (!_internalArray) {
@@ -19,29 +35,35 @@
     return _internalArray;
 }
 
-+ (TSStack *)stack {
-    return [[TSStack alloc] init];
+- (void)push:(id)object {
+    if (object == nil) {
+        [NSException raise:NSInternalInconsistencyException format:@"Can't push nil object"];
+    }
+    @synchronized (self) {
+        [self.internalArray addObject:object];
+    }
 }
 
-- (void)push:(id)object {
-    if (!object) {
-        object = [NSNull null];
-    }
-    [self.internalArray addObject:object];
-}
+
 
 - (id)peek {
-    return self.internalArray.lastObject;
+    @synchronized (self) {
+        return self.internalArray.lastObject;
+    }
 }
 
 - (id)pop {
-    id object = [self.internalArray lastObject];
-    [self.internalArray removeLastObject];
-    return object;
+    @synchronized (self) {
+        id object = [self.internalArray lastObject];
+        [self.internalArray removeLastObject];
+        return object;
+    }
 }
 
 - (NSUInteger)count {
-    return self.internalArray.count;
+    @synchronized (self) {
+        return self.internalArray.count;
+    }
 }
 
 - (BOOL)isEmpty {
@@ -49,10 +71,14 @@
 }
 
 - (BOOL)isEqual:(TSStack *)object {
-    if(![object isKindOfClass:[TSStack class]]) {
-        return NO;
+    @synchronized (self) {
+        return [object isKindOfClass:[TSStack class]] && [self.internalArray isEqual:object.internalArray];
     }
-    return [self.internalArray isEqual:object.internalArray];
 }
 
+- (void)clear {
+    @synchronized (self) {
+        [self.internalArray removeAllObjects];
+    }
+}
 @end

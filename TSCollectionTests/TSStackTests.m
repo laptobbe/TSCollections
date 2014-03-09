@@ -8,17 +8,17 @@
 
 #import <XCTest/XCTest.h>
 #import "TSStack.h"
+#import "TSAsyncTesting.h"
 
 @interface TSStackTests : XCTestCase
 
-@property (nonatomic, strong) TSStack *stack;
+@property(nonatomic, strong) TSStack *stack;
 
 @end
 
 @implementation TSStackTests
 
-- (void)setUp
-{
+- (void)setUp {
     [super setUp];
     self.stack = [[TSStack alloc] init];
 }
@@ -128,13 +128,51 @@
 }
 
 - (void)testPushingNil {
-    XCTAssertNoThrow([self.stack push:nil]);
-    XCTAssertEqual(self.stack.count, 1U);
-    XCTAssertEqualObjects(self.stack.pop, [NSNull null]);
+    XCTAssertThrowsSpecificNamed([self.stack push:nil], NSException, NSInternalInconsistencyException);
+    XCTAssertEqual(self.stack.count, 0U);
+}
+
+- (void)testPopingEmptyStack {
+    XCTAssertNoThrow(self.stack.pop);
+    XCTAssertNil(self.stack.pop);
 }
 
 - (void)testPeekEmptyStack {
     XCTAssertNoThrow([self.stack peek]);
+}
+
+- (void)testModifyingOnBackgroundQueue {
+    [self.stack push:@1];
+    [TSAsyncTesting testOnBackgroundQueue:^{
+        XCTAssertNoThrow([self.stack push:@5]);
+    }];
+    XCTAssertEqual(self.stack.count, 2U);
+}
+
+- (void)testClearing {
+    [self.stack push:@1];
+    [self.stack push:@2];
+    XCTAssertEqual(self.stack.count, 2U);
+    [self.stack clear];
+    XCTAssertEqual(self.stack.count, 0U);
+}
+
+- (void)testAddingAfterClearing {
+    [self.stack push:@1];
+    [self.stack push:@2];
+    [self.stack clear];
+    XCTAssertEqual(self.stack.count, 0U);
+    [self.stack push:@3];
+    XCTAssertEqual(self.stack.count, 1U);
+}
+
+- (void)testConvenienceCreateWithObjects {
+    self.stack = [TSStack stackWithObjects:@[@1,@"2",@3]];
+    XCTAssertNotNil(self.stack);
+    XCTAssertEqual(self.stack.count, 3U);
+    XCTAssertEqualObjects(self.stack.pop, @3);
+    XCTAssertEqualObjects(self.stack.pop, @"2");
+    XCTAssertEqualObjects(self.stack.pop, @1);
 }
 
 @end

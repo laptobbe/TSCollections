@@ -14,6 +14,12 @@
 
 - (void)push:(id)object;
 
+- (void)clear;
+
+- (id)initWithObjects:(NSArray *)array;
+
 + (TSStack *)stack;
+
++ (TSStack *)stackWithObjects:(NSArray *)objects;
 
 @end
