@@ -67,6 +67,12 @@
     }
 }
 
+- (id)peek {
+    @synchronized (self) {
+        return [self.backingArray firstObject];
+    }
+}
+
 - (void)clear {
     @synchronized (self) {
         [self.backingArray removeAllObjects];

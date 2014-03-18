@@ -19,6 +19,8 @@
 
 - (id)dequeue;
 
+- (id)peek;
+
 - (void)clear;
 
 @end
