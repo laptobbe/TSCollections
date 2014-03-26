@@ -1,6 +1,17 @@
 TSCollections
 =============
 TSCollections is a set of convenience classes that represents common collection patterns. Such as a stack or queue. 
+#Installation
+Use cocoa pods or drag the needed source files into your project. 
+
+To get all collections.
+```objc
+pod 'TSCollections'
+```
+Or a specific collection
+```objc
+pod 'TSCollections/TSQueue'
+```
 
 #TSStack
 TSStack is a thread safe implementation of a stack (first in last out). You can do everything you expect from stack like pushing poping and peeking. For example:
