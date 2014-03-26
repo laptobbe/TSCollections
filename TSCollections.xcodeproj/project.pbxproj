@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		063939E315674C0D9FFC6B14 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E72128B158D413FA5802BD5 /* libPods.a */; };
+		CC3C7372B662A75AF250322E /* TSTwoDimensionalArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C71E82221CFFD2CF2F65D /* TSTwoDimensionalArrayTests.m */; };
+		CC3C7717EF3D44EC81D3DB4C /* TSExpandingArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C7632CF0A1A71E6544127 /* TSExpandingArrayTests.m */; };
+		CC3C77A43B0F18574BA33844 /* TSQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C78F022A479479E99CD94 /* TSQueue.m */; };
+		CC3C79224C5DE1088CF11BCC /* TSQueueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C7F9517D2C57A3573AC14 /* TSQueueTests.m */; };
+		CC3C79AB5396564EF70011C0 /* TSExpandingArray.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C7EC6A40CE483897B9851 /* TSExpandingArray.m */; };
+		CC3C7A90A4CA60BD612B9EC4 /* TSTwoDimensionalArray.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C73ECC746E9DC83AFB4AC /* TSTwoDimensionalArray.m */; };
 		F6FE844718CAFF0600FD227D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FE844618CAFF0600FD227D /* XCTest.framework */; };
 		F6FE844918CAFF0600FD227D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FE844818CAFF0600FD227D /* Foundation.framework */; };
 		F6FE844B18CAFF0600FD227D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FE844A18CAFF0600FD227D /* UIKit.framework */; };
@@ -16,6 +23,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E72128B158D413FA5802BD5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4F0204DBCFF4B1597A2249F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		CC3C7189DD8BD1796E2C0224 /* TSExpandingArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSExpandingArray.h; sourceTree = "<group>"; };
+		CC3C71E82221CFFD2CF2F65D /* TSTwoDimensionalArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTwoDimensionalArrayTests.m; sourceTree = "<group>"; };
+		CC3C73ECC746E9DC83AFB4AC /* TSTwoDimensionalArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTwoDimensionalArray.m; sourceTree = "<group>"; };
+		CC3C7632CF0A1A71E6544127 /* TSExpandingArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSExpandingArrayTests.m; sourceTree = "<group>"; };
+		CC3C78F022A479479E99CD94 /* TSQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSQueue.m; sourceTree = "<group>"; };
+		CC3C7A574FF967A6D946E538 /* TSQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSQueue.h; sourceTree = "<group>"; };
+		CC3C7B64C99F9689BF9AD50B /* TSTwoDimensionalArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTwoDimensionalArray.h; sourceTree = "<group>"; };
+		CC3C7EC6A40CE483897B9851 /* TSExpandingArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSExpandingArray.m; sourceTree = "<group>"; };
+		CC3C7F9517D2C57A3573AC14 /* TSQueueTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSQueueTests.m; sourceTree = "<group>"; };
 		F6FE844318CAFF0600FD227D /* TSCollectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TSCollectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6FE844618CAFF0600FD227D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F6FE844818CAFF0600FD227D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -36,6 +54,7 @@
 				F6FE844718CAFF0600FD227D /* XCTest.framework in Frameworks */,
 				F6FE844B18CAFF0600FD227D /* UIKit.framework in Frameworks */,
 				F6FE844918CAFF0600FD227D /* Foundation.framework in Frameworks */,
+				063939E315674C0D9FFC6B14 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,6 +68,7 @@
 				F6FE844C18CAFF0600FD227D /* TSCollectionTests */,
 				F6FE844518CAFF0600FD227D /* Frameworks */,
 				F6FE844418CAFF0600FD227D /* Products */,
+				B4F0204DBCFF4B1597A2249F /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +86,7 @@
 				F6FE844618CAFF0600FD227D /* XCTest.framework */,
 				F6FE844818CAFF0600FD227D /* Foundation.framework */,
 				F6FE844A18CAFF0600FD227D /* UIKit.framework */,
+				2E72128B158D413FA5802BD5 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -75,6 +96,9 @@
 			children = (
 				F6FE845818CAFF9B00FD227D /* TSStackTests.m */,
 				F6FE844D18CAFF0600FD227D /* Supporting Files */,
+				CC3C7F9517D2C57A3573AC14 /* TSQueueTests.m */,
+				CC3C71E82221CFFD2CF2F65D /* TSTwoDimensionalArrayTests.m */,
+				CC3C7632CF0A1A71E6544127 /* TSExpandingArrayTests.m */,
 			);
 			path = TSCollectionTests;
 			sourceTree = "<group>";
@@ -94,6 +118,12 @@
 			children = (
 				F6FE845B18CAFFB300FD227D /* TSStack.h */,
 				F6FE845C18CAFFB300FD227D /* TSStack.m */,
+				CC3C78F022A479479E99CD94 /* TSQueue.m */,
+				CC3C7A574FF967A6D946E538 /* TSQueue.h */,
+				CC3C73ECC746E9DC83AFB4AC /* TSTwoDimensionalArray.m */,
+				CC3C7B64C99F9689BF9AD50B /* TSTwoDimensionalArray.h */,
+				CC3C7EC6A40CE483897B9851 /* TSExpandingArray.m */,
+				CC3C7189DD8BD1796E2C0224 /* TSExpandingArray.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -105,9 +135,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6FE845518CAFF0600FD227D /* Build configuration list for PBXNativeTarget "TSCollectionTests" */;
 			buildPhases = (
+				E237DF5C29CF4E7DABDF107D /* Check Pods Manifest.lock */,
 				F6FE843F18CAFF0600FD227D /* Sources */,
 				F6FE844018CAFF0600FD227D /* Frameworks */,
 				F6FE844118CAFF0600FD227D /* Resources */,
+				BEEC1417F0E94ED8833D0F72 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -154,6 +186,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BEEC1417F0E94ED8833D0F72 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E237DF5C29CF4E7DABDF107D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F6FE843F18CAFF0600FD227D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -161,6 +226,12 @@
 			files = (
 				F6FE845918CAFF9B00FD227D /* TSStackTests.m in Sources */,
 				F6FE845D18CAFFB300FD227D /* TSStack.m in Sources */,
+				CC3C79224C5DE1088CF11BCC /* TSQueueTests.m in Sources */,
+				CC3C77A43B0F18574BA33844 /* TSQueue.m in Sources */,
+				CC3C7A90A4CA60BD612B9EC4 /* TSTwoDimensionalArray.m in Sources */,
+				CC3C7372B662A75AF250322E /* TSTwoDimensionalArrayTests.m in Sources */,
+				CC3C79AB5396564EF70011C0 /* TSExpandingArray.m in Sources */,
+				CC3C7717EF3D44EC81D3DB4C /* TSExpandingArrayTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +263,7 @@
 		};
 		F6FE845618CAFF0600FD227D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4F0204DBCFF4B1597A2249F /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
@@ -240,6 +312,7 @@
 		};
 		F6FE845718CAFF0600FD227D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4F0204DBCFF4B1597A2249F /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";

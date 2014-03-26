@@ -1,0 +1,10 @@
+PODS:
+  - TSAsyncTesting (1.0)
+
+DEPENDENCIES:
+  - TSAsyncTesting
+
+SPEC CHECKSUMS:
+  TSAsyncTesting: b7c902759c53e76831dce568daea845df6169bdf
+
+COCOAPODS: 0.29.0
