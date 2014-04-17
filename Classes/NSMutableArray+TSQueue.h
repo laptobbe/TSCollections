@@ -10,7 +10,7 @@
 
 - (id)dequeue;
 
-- (id)peek;
+- (id)first;
 
 - (void)clear;
 

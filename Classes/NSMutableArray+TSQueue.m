@@ -27,7 +27,7 @@
     }
 }
 
-- (id)peek {
+- (id)first {
     @synchronized (self) {
         return [self firstObject];
     }

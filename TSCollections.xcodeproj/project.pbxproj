@@ -19,7 +19,7 @@
 		F6FE844B18CAFF0600FD227D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FE844A18CAFF0600FD227D /* UIKit.framework */; };
 		F6FE845118CAFF0600FD227D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F6FE844F18CAFF0600FD227D /* InfoPlist.strings */; };
 		F6FE845918CAFF9B00FD227D /* TSStackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FE845818CAFF9B00FD227D /* TSStackTests.m */; };
-		F6FE845D18CAFFB300FD227D /* TSStack.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FE845C18CAFFB300FD227D /* TSStack.m */; };
+		F6FE845D18CAFFB300FD227D /* NSMutableArray+TSStack.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FE845C18CAFFB300FD227D /* NSMutableArray+TSStack.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,8 +42,8 @@
 		F6FE845018CAFF0600FD227D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F6FE845418CAFF0600FD227D /* TSCollectionTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TSCollectionTests-Prefix.pch"; sourceTree = "<group>"; };
 		F6FE845818CAFF9B00FD227D /* TSStackTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSStackTests.m; sourceTree = "<group>"; };
-		F6FE845B18CAFFB300FD227D /* TSStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSStack.h; sourceTree = "<group>"; };
-		F6FE845C18CAFFB300FD227D /* TSStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSStack.m; sourceTree = "<group>"; };
+		F6FE845B18CAFFB300FD227D /* NSMutableArray+TSStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+TSStack.h"; sourceTree = "<group>"; };
+		F6FE845C18CAFFB300FD227D /* NSMutableArray+TSStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+TSStack.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +116,8 @@
 		F6FE845A18CAFFB300FD227D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F6FE845B18CAFFB300FD227D /* TSStack.h */,
-				F6FE845C18CAFFB300FD227D /* TSStack.m */,
+				F6FE845B18CAFFB300FD227D /* NSMutableArray+TSStack.h */,
+				F6FE845C18CAFFB300FD227D /* NSMutableArray+TSStack.m */,
 				CC3C78F022A479479E99CD94 /* NSMutableArray+TSQueue.m */,
 				CC3C7A574FF967A6D946E538 /* NSMutableArray+TSQueue.h */,
 				CC3C73ECC746E9DC83AFB4AC /* TSTwoDimensionalArray.m */,
@@ -225,7 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6FE845918CAFF9B00FD227D /* TSStackTests.m in Sources */,
-				F6FE845D18CAFFB300FD227D /* TSStack.m in Sources */,
+				F6FE845D18CAFFB300FD227D /* NSMutableArray+TSStack.m in Sources */,
 				CC3C79224C5DE1088CF11BCC /* TSQueueTests.m in Sources */,
 				CC3C77A43B0F18574BA33844 /* NSMutableArray+TSQueue.m in Sources */,
 				CC3C7A90A4CA60BD612B9EC4 /* TSTwoDimensionalArray.m in Sources */,

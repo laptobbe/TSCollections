@@ -100,6 +100,6 @@
 - (void)testPeekingQueue {
     [self.queue enqueue:@45];
     [self.queue enqueue:@46];
-    XCTAssertEqualObjects(@45, [self.queue peek]);
+    XCTAssertEqualObjects(@45, [self.queue first]);
 }
 @end
