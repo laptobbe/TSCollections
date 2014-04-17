@@ -7,11 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "TSQueue.h"
+#import "NSMutableArray+TSQueue.h"
 
 @interface TSQueueTests : XCTestCase
 
-@property(strong) TSQueue *queue;
+@property(strong) NSMutableArray *queue;
 
 @end
 
@@ -19,7 +19,7 @@
 
 - (void)setUp {
     [super setUp];
-    self.queue = [[TSQueue alloc] init];
+    self.queue = [NSMutableArray new];
 }
 
 - (void)tearDown {
@@ -29,7 +29,6 @@
 
 - (void)testEnqueue {
     [self.queue enqueue:@3];
-
     XCTAssertEqual(self.queue.count, 1U);
 }
 
@@ -67,39 +66,30 @@
     XCTAssertTrue(self.queue.isEmpty);
 }
 
-- (void)testConvenience {
-    XCTAssertNoThrow(self.queue = [TSQueue queue]);
-    XCTAssertEqual(self.queue.count, 0U);
-}
-
 - (void)testConvenienceWithArray {
-    self.queue = [TSQueue queueWithObjects:@[@1, @2, @3]];
+    self.queue = [@[@1, @2, @3] mutableCopy];
     XCTAssertEqual(self.queue.count, 3U);
     XCTAssertEqualObjects([self.queue dequeue], @1);
     XCTAssertEqualObjects([self.queue dequeue], @2);
     XCTAssertEqualObjects([self.queue dequeue], @3);
 }
 
-- (void)testEqualityEmpty {
-    XCTAssertEqualObjects(self.queue, [TSQueue queue]);
-}
-
 - (void)testEqualityOneObject {
     [self.queue enqueue:@43];
-    XCTAssertEqualObjects(self.queue, [TSQueue queueWithObjects:@[@43]]);
+    XCTAssertEqualObjects(self.queue, @[@43]);
 }
 
 - (void)testEqualityTwoObjects {
     [self.queue enqueue:@43];
     [self.queue enqueue:@46];
-    TSQueue *testQueue = [TSQueue queueWithObjects:@[@43, @46]];
+    NSArray *testQueue = @[@43, @46];
     XCTAssertEqualObjects(self.queue, testQueue);
 }
 
 - (void)testEqualityTwoObjectsDifferentOrder {
     [self.queue enqueue:@46];
     [self.queue enqueue:@43];
-    TSQueue *testQueue = [TSQueue queueWithObjects:@[@43, @46]];
+    NSArray *testQueue =  @[@43, @46];
     XCTAssertNotEqualObjects(self.queue, testQueue);
 }
 
