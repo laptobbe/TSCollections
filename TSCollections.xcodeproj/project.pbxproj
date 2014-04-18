@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		063939E315674C0D9FFC6B14 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E72128B158D413FA5802BD5 /* libPods.a */; };
+		CC3C7297EF5E2E28F9D593EE /* TSCollectionFilteringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C7EDDC7E80BE04BCAACD9 /* TSCollectionFilteringTests.m */; };
 		CC3C7372B662A75AF250322E /* TSTwoDimensionalArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C71E82221CFFD2CF2F65D /* TSTwoDimensionalArrayTests.m */; };
 		CC3C7717EF3D44EC81D3DB4C /* TSExpandingArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C7632CF0A1A71E6544127 /* TSExpandingArrayTests.m */; };
 		CC3C77A43B0F18574BA33844 /* NSMutableArray+TSQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C78F022A479479E99CD94 /* NSMutableArray+TSQueue.m */; };
 		CC3C79224C5DE1088CF11BCC /* TSQueueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C7F9517D2C57A3573AC14 /* TSQueueTests.m */; };
 		CC3C79AB5396564EF70011C0 /* TSExpandingArray.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C7EC6A40CE483897B9851 /* TSExpandingArray.m */; };
 		CC3C7A90A4CA60BD612B9EC4 /* TSTwoDimensionalArray.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C73ECC746E9DC83AFB4AC /* TSTwoDimensionalArray.m */; };
+		CC3C7C6BCCB2ECA04B86F719 /* TSCollectionMappingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C726486818305007BB3D7 /* TSCollectionMappingTests.m */; };
+		CC3C7E3288AE10FDD259ADA6 /* TSCollectionReduceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C71A8EF43BD42F1DB163D /* TSCollectionReduceTests.m */; };
+		CC3C7EC38B3BFF23147A961A /* TSCollectionHigherOrderFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C71DF846DD3DB7C84E28E /* TSCollectionHigherOrderFunctions.m */; };
 		F6FE844718CAFF0600FD227D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FE844618CAFF0600FD227D /* XCTest.framework */; };
 		F6FE844918CAFF0600FD227D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FE844818CAFF0600FD227D /* Foundation.framework */; };
 		F6FE844B18CAFF0600FD227D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FE844A18CAFF0600FD227D /* UIKit.framework */; };
@@ -26,13 +30,18 @@
 		2E72128B158D413FA5802BD5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4F0204DBCFF4B1597A2249F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		CC3C7189DD8BD1796E2C0224 /* TSExpandingArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSExpandingArray.h; sourceTree = "<group>"; };
+		CC3C71A8EF43BD42F1DB163D /* TSCollectionReduceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCollectionReduceTests.m; sourceTree = "<group>"; };
+		CC3C71DF846DD3DB7C84E28E /* TSCollectionHigherOrderFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCollectionHigherOrderFunctions.m; sourceTree = "<group>"; };
 		CC3C71E82221CFFD2CF2F65D /* TSTwoDimensionalArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTwoDimensionalArrayTests.m; sourceTree = "<group>"; };
+		CC3C726486818305007BB3D7 /* TSCollectionMappingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCollectionMappingTests.m; sourceTree = "<group>"; };
 		CC3C73ECC746E9DC83AFB4AC /* TSTwoDimensionalArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTwoDimensionalArray.m; sourceTree = "<group>"; };
+		CC3C761D4F0E01DF65B274BC /* TSCollectionHigherOrderFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCollectionHigherOrderFunctions.h; sourceTree = "<group>"; };
 		CC3C7632CF0A1A71E6544127 /* TSExpandingArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSExpandingArrayTests.m; sourceTree = "<group>"; };
 		CC3C78F022A479479E99CD94 /* NSMutableArray+TSQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+TSQueue.m"; sourceTree = "<group>"; };
 		CC3C7A574FF967A6D946E538 /* NSMutableArray+TSQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+TSQueue.h"; sourceTree = "<group>"; };
 		CC3C7B64C99F9689BF9AD50B /* TSTwoDimensionalArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTwoDimensionalArray.h; sourceTree = "<group>"; };
 		CC3C7EC6A40CE483897B9851 /* TSExpandingArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSExpandingArray.m; sourceTree = "<group>"; };
+		CC3C7EDDC7E80BE04BCAACD9 /* TSCollectionFilteringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCollectionFilteringTests.m; sourceTree = "<group>"; };
 		CC3C7F9517D2C57A3573AC14 /* TSQueueTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSQueueTests.m; sourceTree = "<group>"; };
 		F6FE844318CAFF0600FD227D /* TSCollectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TSCollectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6FE844618CAFF0600FD227D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -99,6 +108,9 @@
 				CC3C7F9517D2C57A3573AC14 /* TSQueueTests.m */,
 				CC3C71E82221CFFD2CF2F65D /* TSTwoDimensionalArrayTests.m */,
 				CC3C7632CF0A1A71E6544127 /* TSExpandingArrayTests.m */,
+				CC3C7EDDC7E80BE04BCAACD9 /* TSCollectionFilteringTests.m */,
+				CC3C726486818305007BB3D7 /* TSCollectionMappingTests.m */,
+				CC3C71A8EF43BD42F1DB163D /* TSCollectionReduceTests.m */,
 			);
 			path = TSCollectionTests;
 			sourceTree = "<group>";
@@ -124,6 +136,8 @@
 				CC3C7B64C99F9689BF9AD50B /* TSTwoDimensionalArray.h */,
 				CC3C7EC6A40CE483897B9851 /* TSExpandingArray.m */,
 				CC3C7189DD8BD1796E2C0224 /* TSExpandingArray.h */,
+				CC3C71DF846DD3DB7C84E28E /* TSCollectionHigherOrderFunctions.m */,
+				CC3C761D4F0E01DF65B274BC /* TSCollectionHigherOrderFunctions.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -232,6 +246,10 @@
 				CC3C7372B662A75AF250322E /* TSTwoDimensionalArrayTests.m in Sources */,
 				CC3C79AB5396564EF70011C0 /* TSExpandingArray.m in Sources */,
 				CC3C7717EF3D44EC81D3DB4C /* TSExpandingArrayTests.m in Sources */,
+				CC3C7297EF5E2E28F9D593EE /* TSCollectionFilteringTests.m in Sources */,
+				CC3C7EC38B3BFF23147A961A /* TSCollectionHigherOrderFunctions.m in Sources */,
+				CC3C7C6BCCB2ECA04B86F719 /* TSCollectionMappingTests.m in Sources */,
+				CC3C7E3288AE10FDD259ADA6 /* TSCollectionReduceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
