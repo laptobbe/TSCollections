@@ -2,11 +2,11 @@
 // Created by Tobias Sundstrand on 2014-04-18.
 //
 
-#import "TSCollectionHigherOrderFunctions.h"
+#import "TSCollectionOperations.h"
 #import <objc/runtime.h>
 
 
-@implementation TSCollectionHigherOrderFunctions
+@implementation TSCollectionOperations
 
 typedef enum {
     TSCollectionTypeVector = 0,
@@ -98,7 +98,7 @@ typedef enum {
 }
 
 + (void)load {
-    [self addHigherOrderFunctionsToClasses:@[
+    [self addCollectionOperationsToClasses:@[
             [NSArray class],
             [NSSet class],
             [NSDictionary class],
@@ -107,25 +107,24 @@ typedef enum {
 }
 
 id filterWithBlock(id self, SEL _cmd, TSFilterBlock block) {
-    return [TSCollectionHigherOrderFunctions filter:self withBlock:block];
+    return [TSCollectionOperations filter:self withBlock:block];
 }
 
 id mapWithBlock(id self, SEL _cmd, TSMapBlock block) {
-    return [TSCollectionHigherOrderFunctions map:self withBlock:block];
+    return [TSCollectionOperations map:self withBlock:block];
 }
 
 double reduceWithBlock(id self, SEL _cmd, TSReduceBlock block) {
-    return [TSCollectionHigherOrderFunctions reduce:self withBlock:block];
+    return [TSCollectionOperations reduce:self withBlock:block];
 }
 
-+ (void)addHigherOrderFunctionsToClasses:(NSArray *)array {
++ (void)addCollectionOperationsToClasses:(NSArray *)array {
     for (Class class in array) {
         class_addMethod(class, @selector(filterWithBlock:), (IMP) filterWithBlock, "@@:@");
         class_addMethod(class, @selector(mapWithBlock:), (IMP) mapWithBlock, "@@:@");
         class_addMethod(class, @selector(reduceWithBlock:), (IMP) reduceWithBlock, "d@:@");
     }
 }
-
 
 @end
 

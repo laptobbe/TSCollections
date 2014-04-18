@@ -8,7 +8,7 @@ typedef BOOL (^TSFilterBlock)(id object);
 typedef id (^TSMapBlock)(id object);
 typedef double (^TSReduceBlock)(id object);
 
-@interface TSCollectionHigherOrderFunctions : NSObject
+@interface TSCollectionOperations : NSObject
 
 + (id)filter:(id <NSFastEnumeration>)collection withBlock:(TSFilterBlock)block;
 + (id)map:(id<NSFastEnumeration>)collection withBlock:(TSMapBlock)block;
@@ -16,7 +16,7 @@ typedef double (^TSReduceBlock)(id object);
 
 @end
 
-@protocol TSCollectionHigherOrderFunctions
+@protocol TSCollectionOperation
 
 - (id)filterWithBlock:(TSFilterBlock)block;
 - (id)mapWithBlock:(TSMapBlock)block;
@@ -24,7 +24,7 @@ typedef double (^TSReduceBlock)(id object);
 
 @end
 
-@interface NSArray (HigherOrderFunctions) <TSCollectionHigherOrderFunctions> @end
-@interface NSSet (HigherOrderFunctions) <TSCollectionHigherOrderFunctions> @end
-@interface NSDictionary (HigherOrderFunctions) <TSCollectionHigherOrderFunctions> @end
-@interface NSOrderedSet (HigherOrderFunctions) <TSCollectionHigherOrderFunctions> @end
+@interface NSArray (TSCollectionOperation) <TSCollectionOperation> @end
+@interface NSSet (TSCollectionOperation) <TSCollectionOperation> @end
+@interface NSDictionary (TSCollectionOperation) <TSCollectionOperation> @end
+@interface NSOrderedSet (TSCollectionOperation) <TSCollectionOperation> @end

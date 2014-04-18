@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "TSCollectionHigherOrderFunctions.h"
+#import "TSCollectionOperations.h"
 
 @interface TSCollectionFilteringTests : XCTestCase
 
@@ -29,7 +29,7 @@
 
 - (void)testFilteringArray {
     NSArray *array = @[@2,@9,@1,@4];
-    NSArray *filtered = [TSCollectionHigherOrderFunctions filter:array withBlock:^BOOL(NSNumber *object) {
+    NSArray *filtered = [TSCollectionOperations filter:array withBlock:^BOOL(NSNumber *object) {
         return object.intValue > 3;
     }];
 
@@ -40,7 +40,7 @@
 
 - (void)testFilteringSet {
     NSSet *set = [NSSet setWithArray:@[@1,@2,@3,@4]];
-    NSSet *filtered = [TSCollectionHigherOrderFunctions filter:set withBlock:^BOOL(NSNumber *object) {
+    NSSet *filtered = [TSCollectionOperations filter:set withBlock:^BOOL(NSNumber *object) {
         return object.intValue % 2 == 0;
     }];
     XCTAssertTrue([filtered isKindOfClass:[NSSet class]]);
@@ -50,7 +50,7 @@
 
 - (void)testFilteringOrderedSet {
     NSOrderedSet *set = [NSOrderedSet orderedSetWithArray:@[@1,@2,@3]];
-    NSOrderedSet *filtered = [TSCollectionHigherOrderFunctions filter:set withBlock:^BOOL(NSNumber *object) {
+    NSOrderedSet *filtered = [TSCollectionOperations filter:set withBlock:^BOOL(NSNumber *object) {
         return object.intValue * 2 > 2;
     }];
     XCTAssertTrue([filtered isKindOfClass:[NSOrderedSet class]]);
@@ -60,7 +60,7 @@
 
 - (void)testFilteringNSDictionary {
     NSDictionary *dic = @{@"12" : @"Cecilia", @"164" : @"Tobias", @"94" : @"Emil"};
-    NSDictionary *filtered = [TSCollectionHigherOrderFunctions filter:dic withBlock:^BOOL(NSString *key) {
+    NSDictionary *filtered = [TSCollectionOperations filter:dic withBlock:^BOOL(NSString *key) {
         NSString *name = dic[key];
         return name.length > 4;
     }];

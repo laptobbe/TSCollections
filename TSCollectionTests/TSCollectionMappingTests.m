@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "TSCollectionHigherOrderFunctions.h"
+#import "TSCollectionOperations.h"
 
 @interface TSCollectionMappingTests : XCTestCase
 
@@ -27,7 +27,7 @@
 
 - (void)testMappingArray {
     NSArray *array = @[@{@"name" : @"Matthew"}, @{@"name" : @"Sara"}, @{@"name" : @"Cecilia"}];
-    NSArray *mapped = [TSCollectionHigherOrderFunctions map:array withBlock:^NSString *(NSDictionary *object) {
+    NSArray *mapped = [TSCollectionOperations map:array withBlock:^NSString *(NSDictionary *object) {
         return [object objectForKey:@"name"];
     }];
     XCTAssertNotNil(mapped);
@@ -38,7 +38,7 @@
 
 - (void)testMappingSet {
     NSSet *set = [NSSet setWithArray:@[@{@"name" : @"Matthew"}, @{@"name" : @"Sara"}, @{@"name" : @"Cecilia"}]];
-    NSSet *mapped = [TSCollectionHigherOrderFunctions map:set withBlock:^NSString *(NSDictionary *object) {
+    NSSet *mapped = [TSCollectionOperations map:set withBlock:^NSString *(NSDictionary *object) {
         return [object objectForKey:@"name"];
     }];
     XCTAssertNotNil(mapped);
@@ -49,7 +49,7 @@
 
 - (void)testMappingOrderedSet {
     NSOrderedSet *set = [NSOrderedSet orderedSetWithArray:@[@{@"name" : @"Matthew"}, @{@"name" : @"Sara"}, @{@"name" : @"Cecilia"}]];
-    NSOrderedSet *mapped = [TSCollectionHigherOrderFunctions map:set withBlock:^NSString *(NSDictionary *object) {
+    NSOrderedSet *mapped = [TSCollectionOperations map:set withBlock:^NSString *(NSDictionary *object) {
         return [object objectForKey:@"name"];
     }];
     XCTAssertNotNil(mapped);
@@ -60,7 +60,7 @@
 
 - (void)testMappingDictionary {
     NSDictionary *dic = @{@"134" : @{@"name" : @"Cecilia"}, @"153" : @{@"name" : @"Tobias"}, @"93" : @{@"name" : @"Emil"}};
-    NSDictionary *mapped = [TSCollectionHigherOrderFunctions map:dic withBlock:^id(NSString *key) {
+    NSDictionary *mapped = [TSCollectionOperations map:dic withBlock:^id(NSString *key) {
         return dic[key][@"name"];
     }];
     XCTAssertNotNil(mapped);
@@ -72,7 +72,7 @@
 
 - (void)testMappingReturnNil {
     NSArray *array = @[@{@"name" : @"Matthew"}, @{@"name" : @"Sara"}, @{@"name" : @"Cecilia"}, @{@"no_name" : @"no_name"}];
-    NSArray *mapped = [TSCollectionHigherOrderFunctions map:array withBlock:^NSString *(NSDictionary *object) {
+    NSArray *mapped = [TSCollectionOperations map:array withBlock:^NSString *(NSDictionary *object) {
         return [object objectForKey:@"name"];
     }];
     XCTAssertNotNil(mapped);
