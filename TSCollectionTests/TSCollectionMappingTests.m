@@ -26,7 +26,7 @@
 }
 
 - (void)testMappingArray {
-    NSArray *array = @[@{@"name": @"Matthew"}, @{@"name": @"Sara"}, @{@"name" : @"Cecilia"}];
+    NSArray *array = @[@{@"name" : @"Matthew"}, @{@"name" : @"Sara"}, @{@"name" : @"Cecilia"}];
     NSArray *mapped = [TSCollectionHigherOrderFunctions map:array withBlock:^NSString *(NSDictionary *object) {
         return [object objectForKey:@"name"];
     }];
@@ -37,7 +37,7 @@
 }
 
 - (void)testMappingSet {
-    NSSet *set = [NSSet setWithArray:@[@{@"name": @"Matthew"}, @{@"name": @"Sara"}, @{@"name" : @"Cecilia"}]];
+    NSSet *set = [NSSet setWithArray:@[@{@"name" : @"Matthew"}, @{@"name" : @"Sara"}, @{@"name" : @"Cecilia"}]];
     NSSet *mapped = [TSCollectionHigherOrderFunctions map:set withBlock:^NSString *(NSDictionary *object) {
         return [object objectForKey:@"name"];
     }];
@@ -48,7 +48,7 @@
 }
 
 - (void)testMappingOrderedSet {
-    NSOrderedSet *set = [NSOrderedSet orderedSetWithArray:@[@{@"name": @"Matthew"}, @{@"name": @"Sara"}, @{@"name" : @"Cecilia"}]];
+    NSOrderedSet *set = [NSOrderedSet orderedSetWithArray:@[@{@"name" : @"Matthew"}, @{@"name" : @"Sara"}, @{@"name" : @"Cecilia"}]];
     NSOrderedSet *mapped = [TSCollectionHigherOrderFunctions map:set withBlock:^NSString *(NSDictionary *object) {
         return [object objectForKey:@"name"];
     }];
@@ -58,8 +58,20 @@
     XCTAssertEqualObjects(mapped, testSet);
 }
 
+- (void)testMappingDictionary {
+    NSDictionary *dic = @{@"134" : @{@"name" : @"Cecilia"}, @"153" : @{@"name" : @"Tobias"}, @"93" : @{@"name" : @"Emil"}};
+    NSDictionary *mapped = [TSCollectionHigherOrderFunctions map:dic withBlock:^id(NSString *key) {
+        return dic[key][@"name"];
+    }];
+    XCTAssertNotNil(mapped);
+    XCTAssertTrue([mapped isKindOfClass:[NSDictionary class]]);
+    XCTAssertEqualObjects(mapped[@"134"], @"Cecilia");
+    XCTAssertEqualObjects(mapped[@"153"], @"Tobias");
+    XCTAssertEqualObjects(mapped[@"93"], @"Emil");
+}
+
 - (void)testMappingReturnNil {
-    NSArray *array = @[@{@"name": @"Matthew"}, @{@"name": @"Sara"}, @{@"name" : @"Cecilia"}, @{@"no_name":@"no_name"}];
+    NSArray *array = @[@{@"name" : @"Matthew"}, @{@"name" : @"Sara"}, @{@"name" : @"Cecilia"}, @{@"no_name" : @"no_name"}];
     NSArray *mapped = [TSCollectionHigherOrderFunctions map:array withBlock:^NSString *(NSDictionary *object) {
         return [object objectForKey:@"name"];
     }];
@@ -68,4 +80,50 @@
     NSArray *testArray = @[@"Matthew", @"Sara", @"Cecilia"];
     XCTAssertEqualObjects(mapped, testArray);
 }
+
+- (void)testMappingArrayWithCategory {
+    NSArray *array = @[@{@"name" : @"Matthew"}, @{@"name" : @"Sara"}, @{@"name" : @"Cecilia"}];
+    NSArray *mapped = [array mapWithBlock:^NSString *(NSDictionary *object) {
+        return [object objectForKey:@"name"];
+    }];
+    XCTAssertNotNil(mapped);
+    XCTAssertTrue([mapped isKindOfClass:[NSArray class]]);
+    NSArray *testArray = @[@"Matthew", @"Sara", @"Cecilia"];
+    XCTAssertEqualObjects(mapped, testArray);
+}
+
+- (void)testMappingSetWithCategory {
+    NSSet *set = [NSSet setWithArray:@[@{@"name" : @"Matthew"}, @{@"name" : @"Sara"}, @{@"name" : @"Cecilia"}]];
+    NSSet *mapped = [set mapWithBlock:^NSString *(NSDictionary *object) {
+        return [object objectForKey:@"name"];
+    }];
+    XCTAssertNotNil(mapped);
+    XCTAssertTrue([mapped isKindOfClass:[NSSet class]]);
+    NSSet *testSet = [NSSet setWithArray:@[@"Matthew", @"Sara", @"Cecilia"]];
+    XCTAssertEqualObjects(mapped, testSet);
+}
+
+- (void)testMappingOrderedSetWithCategory {
+    NSOrderedSet *set = [NSOrderedSet orderedSetWithArray:@[@{@"name" : @"Matthew"}, @{@"name" : @"Sara"}, @{@"name" : @"Cecilia"}]];
+    NSOrderedSet *mapped = [set mapWithBlock:^NSString *(NSDictionary *object) {
+        return [object objectForKey:@"name"];
+    }];
+    XCTAssertNotNil(mapped);
+    XCTAssertTrue([mapped isKindOfClass:[NSOrderedSet class]]);
+    NSOrderedSet *testSet = [NSOrderedSet orderedSetWithArray:@[@"Matthew", @"Sara", @"Cecilia"]];
+    XCTAssertEqualObjects(mapped, testSet);
+}
+
+- (void)testMappingDictionaryWithCategory {
+    NSDictionary *dic = @{@"134" : @{@"name" : @"Cecilia"}, @"153" : @{@"name" : @"Tobias"}, @"93" : @{@"name" : @"Emil"}};
+    NSDictionary *mapped = [dic mapWithBlock:^id(NSString *key) {
+        return dic[key][@"name"];
+    }];
+    XCTAssertNotNil(mapped);
+    XCTAssertTrue([mapped isKindOfClass:[NSDictionary class]]);
+    XCTAssertEqualObjects(mapped[@"134"], @"Cecilia");
+    XCTAssertEqualObjects(mapped[@"153"], @"Tobias");
+    XCTAssertEqualObjects(mapped[@"93"], @"Emil");
+}
+
 @end

@@ -6,26 +6,79 @@
 #import <objc/runtime.h>
 
 
-
 @implementation TSCollectionHigherOrderFunctions
 
+typedef enum {
+    TSCollectionTypeVector = 0,
+    TSCollectionTypeKeyValue
+} TSCollectionType;
+
++ (TSCollectionType)collectionTypeForCollection:(id)collection {
+    if ([collection respondsToSelector:@selector(objectForKey:)]) {
+        return TSCollectionTypeKeyValue;
+    } else {
+        return TSCollectionTypeVector;
+    }
+}
 
 + (id)filter:(id <NSFastEnumeration>)collection withBlock:(TSFilterBlock)block {
-    return [TSCollectionHigherOrderFunctions map:collection withBlock:^id(id object) {
-        return block(object) ? object : nil;
-    }];
+    if ([self collectionTypeForCollection:collection] == TSCollectionTypeKeyValue) {
+        return [self filter:collection asKeyValueWithBlock:block];
+    } else {
+        return [self filter:collection asVectorWithBlock:block];
+    }
+}
+
++ (id)filter:(id <NSFastEnumeration>)collection asKeyValueWithBlock:(TSFilterBlock)block {
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+    for (id key in collection) {
+        if (block(key)) {
+            [dictionary setObject:collection[key] forKey:key];
+        }
+    }
+    return [self convertResult:dictionary toClassOfObject:collection];
+}
+
++ (id)filter:(id <NSFastEnumeration>)collection asVectorWithBlock:(TSFilterBlock)block {
+    NSMutableArray *array = [NSMutableArray array];
+    for (id object in collection) {
+        if (block(object)) {
+            [array addObject:object];
+        }
+    }
+    return [self convertResult:array toClassOfObject:collection];
 }
 
 + (id)map:(id <NSFastEnumeration>)collection withBlock:(TSMapBlock)block {
-    NSMutableArray *result = [NSMutableArray array];
+    if ([self collectionTypeForCollection:collection] == TSCollectionTypeKeyValue) {
+        return [self map:collection asKeyValueWithBlock:block];
+    } else {
+        return [self map:collection asVectorWithBlock:block];
+    }
+}
+
++ (id)map:(id <NSFastEnumeration>)collection asKeyValueWithBlock:(TSMapBlock)block {
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+    for (id key in collection) {
+        id mapped = block(key);
+        if (mapped) {
+            [dictionary setObject:mapped forKey:key];
+        }
+    }
+    return [self convertResult:dictionary toClassOfObject:collection];
+}
+
++ (id)map:(id <NSFastEnumeration>)collection asVectorWithBlock:(TSMapBlock)block {
+    NSMutableArray *array = [NSMutableArray array];
     for (id object in collection) {
         id mapped = block(object);
         if (mapped) {
-            [result addObject:block(object)];
+            [array addObject:mapped];
         }
     }
-    return [self convertArray:result toClassOfObject:collection];
+    return [self convertResult:array toClassOfObject:collection];
 }
+
 
 + (double)reduce:(id <NSFastEnumeration>)collection withBlock:(TSReduceBlock)block {
     CGFloat result = 0;
@@ -35,12 +88,13 @@
     return result;
 }
 
-
-+ (id)convertArray:(NSArray *)array toClassOfObject:(id)object {
-    if([object respondsToSelector:@selector(initWithArray:)]){
-        return [[[object class] alloc] initWithArray:array];
++ (id)convertResult:(id)result toClassOfObject:(id)object {
+    if ([object respondsToSelector:@selector(initWithArray:)]) {
+        return [[[object class] alloc] initWithArray:result];
+    } else if ([object respondsToSelector:@selector(initWithDictionary:)]) {
+        return [[[object class] alloc] initWithDictionary:result];
     }
-    return array;
+    return result;
 }
 
 + (void)load {
@@ -49,9 +103,6 @@
             [NSSet class],
             [NSDictionary class],
             [NSOrderedSet class],
-            [NSPointerArray class],
-            [NSHashTable class],
-            [NSMapTable class]
     ]];
 }
 

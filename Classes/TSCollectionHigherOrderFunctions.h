@@ -6,7 +6,7 @@
 
 typedef BOOL (^TSFilterBlock)(id object);
 typedef id (^TSMapBlock)(id object);
-typedef CGFloat (^TSReduceBlock)(id object);
+typedef double (^TSReduceBlock)(id object);
 
 @interface TSCollectionHigherOrderFunctions : NSObject
 
@@ -28,6 +28,3 @@ typedef CGFloat (^TSReduceBlock)(id object);
 @interface NSSet (HigherOrderFunctions) <TSCollectionHigherOrderFunctions> @end
 @interface NSDictionary (HigherOrderFunctions) <TSCollectionHigherOrderFunctions> @end
 @interface NSOrderedSet (HigherOrderFunctions) <TSCollectionHigherOrderFunctions> @end
-@interface NSPointerArray (HigherOrderFunctions) <TSCollectionHigherOrderFunctions> @end
-@interface NSHashTable (HigherOrderFunctions) <TSCollectionHigherOrderFunctions> @end
-@interface NSMapTable (HigherOrderFunctions) <TSCollectionHigherOrderFunctions> @end
