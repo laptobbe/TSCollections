@@ -8,21 +8,8 @@
 
 @implementation TSCollectionOperations
 
-typedef enum {
-    TSCollectionTypeVector = 0,
-    TSCollectionTypeKeyValue
-} TSCollectionType;
-
-+ (TSCollectionType)collectionTypeForCollection:(id)collection {
-    if ([collection respondsToSelector:@selector(objectForKey:)]) {
-        return TSCollectionTypeKeyValue;
-    } else {
-        return TSCollectionTypeVector;
-    }
-}
-
 + (id)filter:(id <NSFastEnumeration>)collection withBlock:(TSFilterBlock)block {
-    if ([self collectionTypeForCollection:collection] == TSCollectionTypeKeyValue) {
+    if([self isKeyValueCollection:collection]) {
         return [self filter:collection asKeyValueWithBlock:block];
     } else {
         return [self filter:collection asVectorWithBlock:block];
@@ -50,7 +37,7 @@ typedef enum {
 }
 
 + (id)map:(id <NSFastEnumeration>)collection withBlock:(TSMapBlock)block {
-    if ([self collectionTypeForCollection:collection] == TSCollectionTypeKeyValue) {
+    if([self isKeyValueCollection:collection]) {
         return [self map:collection asKeyValueWithBlock:block];
     } else {
         return [self map:collection asVectorWithBlock:block];
@@ -88,6 +75,10 @@ typedef enum {
     return result;
 }
 
++ (BOOL)isKeyValueCollection:(id)collection {
+    return [collection respondsToSelector:@selector(initWithDictionary:)];
+}
+
 + (id)convertResult:(id)result toClassOfObject:(id)object {
     if ([object respondsToSelector:@selector(initWithArray:)]) {
         return [[[object class] alloc] initWithArray:result];
@@ -120,10 +111,14 @@ double reduceWithBlock(id self, SEL _cmd, TSReduceBlock block) {
 
 + (void)addCollectionOperationsToClasses:(NSArray *)array {
     for (Class class in array) {
-        class_addMethod(class, @selector(filterWithBlock:), (IMP) filterWithBlock, "@@:@");
-        class_addMethod(class, @selector(mapWithBlock:), (IMP) mapWithBlock, "@@:@");
-        class_addMethod(class, @selector(reduceWithBlock:), (IMP) reduceWithBlock, "d@:@");
+        [self addCollectionOperationsToClass:class];
     }
+}
+
++ (void)addCollectionOperationsToClass:(Class)class {
+    class_addMethod(class, @selector(filterWithBlock:), (IMP) filterWithBlock, "@@:@");
+    class_addMethod(class, @selector(mapWithBlock:), (IMP) mapWithBlock, "@@:@");
+    class_addMethod(class, @selector(reduceWithBlock:), (IMP) reduceWithBlock, "d@:@");
 }
 
 @end

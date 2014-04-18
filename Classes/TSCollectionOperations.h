@@ -14,9 +14,10 @@ typedef double (^TSReduceBlock)(id object);
 + (id)map:(id<NSFastEnumeration>)collection withBlock:(TSMapBlock)block;
 + (double)reduce:(id <NSFastEnumeration>)collection withBlock:(TSReduceBlock)block;
 
++ (void)addCollectionOperationsToClass:(Class)class;
 @end
 
-@protocol TSCollectionOperation
+@protocol TSCollectionOperations
 
 - (id)filterWithBlock:(TSFilterBlock)block;
 - (id)mapWithBlock:(TSMapBlock)block;
@@ -24,7 +25,8 @@ typedef double (^TSReduceBlock)(id object);
 
 @end
 
-@interface NSArray (TSCollectionOperation) <TSCollectionOperation> @end
-@interface NSSet (TSCollectionOperation) <TSCollectionOperation> @end
-@interface NSDictionary (TSCollectionOperation) <TSCollectionOperation> @end
-@interface NSOrderedSet (TSCollectionOperation) <TSCollectionOperation> @end
+
+@interface NSArray (TSCollectionOperation) <TSCollectionOperations> @end
+@interface NSSet (TSCollectionOperation) <TSCollectionOperations> @end
+@interface NSOrderedSet (TSCollectionOperation) <TSCollectionOperations> @end
+@interface NSDictionary (TSCollectionOperation) <TSCollectionOperations > @end
