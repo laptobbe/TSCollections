@@ -23,4 +23,6 @@
 
 - (NSUInteger)rowCount;
 
+- (void)removeAllObjects;
+
 @end
