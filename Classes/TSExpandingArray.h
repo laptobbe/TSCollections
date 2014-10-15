@@ -24,4 +24,6 @@
 - (id)objectAtIndexedSubscript:(NSUInteger)idx;
 
 - (void)setObject:(id)obj atIndexedSubscript:(NSUInteger)idx;
+
+- (void)removeAllObjects;
 @end
