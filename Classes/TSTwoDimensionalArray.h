@@ -21,6 +21,6 @@
 
 - (TSExpandingArray *)objectAtIndexedSubscript:(NSInteger)idx;
 
-- (NSUInteger)rowCount
+- (NSUInteger)rowCount;
 
 @end
