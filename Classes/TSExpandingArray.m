@@ -89,4 +89,8 @@
     return [self.backingArray countByEnumeratingWithState:state objects:buffer count:len];
 }
 
+- (void)removeAllObjects{
+    [_backingArray removeAllObjects];
+}
+
 @end
