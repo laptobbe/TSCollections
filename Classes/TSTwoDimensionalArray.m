@@ -61,4 +61,7 @@
     return [self objectsAtRow:idx];
 }
 
+- (NSUInteger)rowCount{
+	return [self.rows count];
+}
 @end
