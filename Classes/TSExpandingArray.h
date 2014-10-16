@@ -3,9 +3,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TSCollectionOperations.h"
 
-@interface TSExpandingArray : NSObject <NSFastEnumeration, TSCollectionOperations>
+@interface TSExpandingArray : NSObject <NSFastEnumeration>
 
 - (NSUInteger)count;
 
