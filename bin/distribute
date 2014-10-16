@@ -25,4 +25,4 @@ system "git commit -m 'Updated version to #{version}'"
 
 system "git flow release finish #{version}" or abort "Could not finish release from git flow"
 
-system "pod trunk push #{podspec}"
+system "pod trunk push"
