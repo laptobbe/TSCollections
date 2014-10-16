@@ -3,8 +3,6 @@
 version = ARGV[0]
 podspec = "TSCollections.podspec"
 
-
-
 #Update pod file
 currentVersion = `cat #{podspec} | grep 's.version ' | awk '{print $3}'`.gsub(/\"/, "").strip
 if version.nil?
