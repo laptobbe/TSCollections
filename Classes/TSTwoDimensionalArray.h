@@ -21,4 +21,15 @@
 
 - (TSExpandingArray *)objectAtIndexedSubscript:(NSInteger)idx;
 
+- (NSUInteger)rowCount;
+
+- (NSUInteger)columnCount;
+
+- (void)removeAllObjects;
+
+- (void)removeObjectAtRow:(NSUInteger)row column:(NSUInteger)column;
+
+- (void)removeRow:(NSUInteger)row;
+
+- (void)removeColumn:(NSUInteger)column;
 @end

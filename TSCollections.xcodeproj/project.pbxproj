@@ -8,31 +8,41 @@
 
 /* Begin PBXBuildFile section */
 		063939E315674C0D9FFC6B14 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E72128B158D413FA5802BD5 /* libPods.a */; };
+		CC3C7297EF5E2E28F9D593EE /* TSCollectionFilteringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C7EDDC7E80BE04BCAACD9 /* TSCollectionFilteringTests.m */; };
 		CC3C7372B662A75AF250322E /* TSTwoDimensionalArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C71E82221CFFD2CF2F65D /* TSTwoDimensionalArrayTests.m */; };
 		CC3C7717EF3D44EC81D3DB4C /* TSExpandingArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C7632CF0A1A71E6544127 /* TSExpandingArrayTests.m */; };
-		CC3C77A43B0F18574BA33844 /* TSQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C78F022A479479E99CD94 /* TSQueue.m */; };
+		CC3C77A43B0F18574BA33844 /* NSMutableArray+TSQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C78F022A479479E99CD94 /* NSMutableArray+TSQueue.m */; };
 		CC3C79224C5DE1088CF11BCC /* TSQueueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C7F9517D2C57A3573AC14 /* TSQueueTests.m */; };
 		CC3C79AB5396564EF70011C0 /* TSExpandingArray.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C7EC6A40CE483897B9851 /* TSExpandingArray.m */; };
 		CC3C7A90A4CA60BD612B9EC4 /* TSTwoDimensionalArray.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C73ECC746E9DC83AFB4AC /* TSTwoDimensionalArray.m */; };
+		CC3C7C6BCCB2ECA04B86F719 /* TSCollectionMappingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C726486818305007BB3D7 /* TSCollectionMappingTests.m */; };
+		CC3C7E3288AE10FDD259ADA6 /* TSCollectionReduceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C71A8EF43BD42F1DB163D /* TSCollectionReduceTests.m */; };
+		CC3C7EC38B3BFF23147A961A /* TSCollectionOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3C71DF846DD3DB7C84E28E /* TSCollectionOperations.m */; };
 		F6FE844718CAFF0600FD227D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FE844618CAFF0600FD227D /* XCTest.framework */; };
 		F6FE844918CAFF0600FD227D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FE844818CAFF0600FD227D /* Foundation.framework */; };
 		F6FE844B18CAFF0600FD227D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FE844A18CAFF0600FD227D /* UIKit.framework */; };
 		F6FE845118CAFF0600FD227D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F6FE844F18CAFF0600FD227D /* InfoPlist.strings */; };
 		F6FE845918CAFF9B00FD227D /* TSStackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FE845818CAFF9B00FD227D /* TSStackTests.m */; };
-		F6FE845D18CAFFB300FD227D /* TSStack.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FE845C18CAFFB300FD227D /* TSStack.m */; };
+		F6FE845D18CAFFB300FD227D /* NSMutableArray+TSStack.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FE845C18CAFFB300FD227D /* NSMutableArray+TSStack.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2E72128B158D413FA5802BD5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4F0204DBCFF4B1597A2249F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		53FD4659043F624A5BCBC221 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		72C2DC9D8C02BEA9925CAEC0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CC3C7189DD8BD1796E2C0224 /* TSExpandingArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSExpandingArray.h; sourceTree = "<group>"; };
+		CC3C71A8EF43BD42F1DB163D /* TSCollectionReduceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCollectionReduceTests.m; sourceTree = "<group>"; };
+		CC3C71DF846DD3DB7C84E28E /* TSCollectionOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCollectionOperations.m; sourceTree = "<group>"; };
 		CC3C71E82221CFFD2CF2F65D /* TSTwoDimensionalArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTwoDimensionalArrayTests.m; sourceTree = "<group>"; };
+		CC3C726486818305007BB3D7 /* TSCollectionMappingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCollectionMappingTests.m; sourceTree = "<group>"; };
 		CC3C73ECC746E9DC83AFB4AC /* TSTwoDimensionalArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTwoDimensionalArray.m; sourceTree = "<group>"; };
+		CC3C761D4F0E01DF65B274BC /* TSCollectionOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCollectionOperations.h; sourceTree = "<group>"; };
 		CC3C7632CF0A1A71E6544127 /* TSExpandingArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSExpandingArrayTests.m; sourceTree = "<group>"; };
-		CC3C78F022A479479E99CD94 /* TSQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSQueue.m; sourceTree = "<group>"; };
-		CC3C7A574FF967A6D946E538 /* TSQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSQueue.h; sourceTree = "<group>"; };
+		CC3C78F022A479479E99CD94 /* NSMutableArray+TSQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+TSQueue.m"; sourceTree = "<group>"; };
+		CC3C7A574FF967A6D946E538 /* NSMutableArray+TSQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+TSQueue.h"; sourceTree = "<group>"; };
 		CC3C7B64C99F9689BF9AD50B /* TSTwoDimensionalArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTwoDimensionalArray.h; sourceTree = "<group>"; };
 		CC3C7EC6A40CE483897B9851 /* TSExpandingArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSExpandingArray.m; sourceTree = "<group>"; };
+		CC3C7EDDC7E80BE04BCAACD9 /* TSCollectionFilteringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCollectionFilteringTests.m; sourceTree = "<group>"; };
 		CC3C7F9517D2C57A3573AC14 /* TSQueueTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSQueueTests.m; sourceTree = "<group>"; };
 		F6FE844318CAFF0600FD227D /* TSCollectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TSCollectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6FE844618CAFF0600FD227D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -42,8 +52,8 @@
 		F6FE845018CAFF0600FD227D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F6FE845418CAFF0600FD227D /* TSCollectionTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TSCollectionTests-Prefix.pch"; sourceTree = "<group>"; };
 		F6FE845818CAFF9B00FD227D /* TSStackTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSStackTests.m; sourceTree = "<group>"; };
-		F6FE845B18CAFFB300FD227D /* TSStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSStack.h; sourceTree = "<group>"; };
-		F6FE845C18CAFFB300FD227D /* TSStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSStack.m; sourceTree = "<group>"; };
+		F6FE845B18CAFFB300FD227D /* NSMutableArray+TSStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+TSStack.h"; sourceTree = "<group>"; };
+		F6FE845C18CAFFB300FD227D /* NSMutableArray+TSStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+TSStack.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +78,7 @@
 				F6FE844C18CAFF0600FD227D /* TSCollectionTests */,
 				F6FE844518CAFF0600FD227D /* Frameworks */,
 				F6FE844418CAFF0600FD227D /* Products */,
-				B4F0204DBCFF4B1597A2249F /* Pods.xcconfig */,
+				FB5E90593CC2684E927E2DFF /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +109,9 @@
 				CC3C7F9517D2C57A3573AC14 /* TSQueueTests.m */,
 				CC3C71E82221CFFD2CF2F65D /* TSTwoDimensionalArrayTests.m */,
 				CC3C7632CF0A1A71E6544127 /* TSExpandingArrayTests.m */,
+				CC3C7EDDC7E80BE04BCAACD9 /* TSCollectionFilteringTests.m */,
+				CC3C726486818305007BB3D7 /* TSCollectionMappingTests.m */,
+				CC3C71A8EF43BD42F1DB163D /* TSCollectionReduceTests.m */,
 			);
 			path = TSCollectionTests;
 			sourceTree = "<group>";
@@ -116,16 +129,27 @@
 		F6FE845A18CAFFB300FD227D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F6FE845B18CAFFB300FD227D /* TSStack.h */,
-				F6FE845C18CAFFB300FD227D /* TSStack.m */,
-				CC3C78F022A479479E99CD94 /* TSQueue.m */,
-				CC3C7A574FF967A6D946E538 /* TSQueue.h */,
+				F6FE845B18CAFFB300FD227D /* NSMutableArray+TSStack.h */,
+				F6FE845C18CAFFB300FD227D /* NSMutableArray+TSStack.m */,
+				CC3C78F022A479479E99CD94 /* NSMutableArray+TSQueue.m */,
+				CC3C7A574FF967A6D946E538 /* NSMutableArray+TSQueue.h */,
 				CC3C73ECC746E9DC83AFB4AC /* TSTwoDimensionalArray.m */,
 				CC3C7B64C99F9689BF9AD50B /* TSTwoDimensionalArray.h */,
 				CC3C7EC6A40CE483897B9851 /* TSExpandingArray.m */,
 				CC3C7189DD8BD1796E2C0224 /* TSExpandingArray.h */,
+				CC3C71DF846DD3DB7C84E28E /* TSCollectionOperations.m */,
+				CC3C761D4F0E01DF65B274BC /* TSCollectionOperations.h */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		FB5E90593CC2684E927E2DFF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				72C2DC9D8C02BEA9925CAEC0 /* Pods.debug.xcconfig */,
+				53FD4659043F624A5BCBC221 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +223,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E237DF5C29CF4E7DABDF107D /* Check Pods Manifest.lock */ = {
@@ -225,13 +249,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6FE845918CAFF9B00FD227D /* TSStackTests.m in Sources */,
-				F6FE845D18CAFFB300FD227D /* TSStack.m in Sources */,
+				F6FE845D18CAFFB300FD227D /* NSMutableArray+TSStack.m in Sources */,
 				CC3C79224C5DE1088CF11BCC /* TSQueueTests.m in Sources */,
-				CC3C77A43B0F18574BA33844 /* TSQueue.m in Sources */,
+				CC3C77A43B0F18574BA33844 /* NSMutableArray+TSQueue.m in Sources */,
 				CC3C7A90A4CA60BD612B9EC4 /* TSTwoDimensionalArray.m in Sources */,
 				CC3C7372B662A75AF250322E /* TSTwoDimensionalArrayTests.m in Sources */,
 				CC3C79AB5396564EF70011C0 /* TSExpandingArray.m in Sources */,
 				CC3C7717EF3D44EC81D3DB4C /* TSExpandingArrayTests.m in Sources */,
+				CC3C7297EF5E2E28F9D593EE /* TSCollectionFilteringTests.m in Sources */,
+				CC3C7EC38B3BFF23147A961A /* TSCollectionOperations.m in Sources */,
+				CC3C7C6BCCB2ECA04B86F719 /* TSCollectionMappingTests.m in Sources */,
+				CC3C7E3288AE10FDD259ADA6 /* TSCollectionReduceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +291,7 @@
 		};
 		F6FE845618CAFF0600FD227D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4F0204DBCFF4B1597A2249F /* Pods.xcconfig */;
+			baseConfigurationReference = 72C2DC9D8C02BEA9925CAEC0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
@@ -312,7 +340,7 @@
 		};
 		F6FE845718CAFF0600FD227D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4F0204DBCFF4B1597A2249F /* Pods.xcconfig */;
+			baseConfigurationReference = 53FD4659043F624A5BCBC221 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";

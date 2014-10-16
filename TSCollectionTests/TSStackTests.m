@@ -7,12 +7,12 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "TSStack.h"
+#import "NSMutableArray+TSStack.h"
 #import "TSAsyncTesting.h"
 
 @interface TSStackTests : XCTestCase
 
-@property(nonatomic, strong) TSStack *stack;
+@property(nonatomic, strong) NSMutableArray *stack;
 
 @end
 
@@ -20,7 +20,7 @@
 
 - (void)setUp {
     [super setUp];
-    self.stack = [[TSStack alloc] init];
+    self.stack = [NSMutableArray new];
 }
 
 - (void)testPushingNumber {
@@ -51,6 +51,14 @@
     [self.stack push:@3];
     XCTAssertEqualObjects([self.stack peek], @3);
     XCTAssertEqual(self.stack.count, 2U);
+}
+
+- (void)testPeekThreeItems {
+    [self.stack push:@4];
+    [self.stack push:@8];
+    [self.stack push:@1];
+    XCTAssertEqualObjects([self.stack peek], @1);
+    XCTAssertEqual(self.stack.count, 3U);
 }
 
 - (void)testPopOneItem {
@@ -85,40 +93,23 @@
     XCTAssertTrue(self.stack.isEmpty);
 }
 
-- (void)testConvenienceCreate {
-    TSStack *stack1 = [TSStack stack];
-    XCTAssertNotNil(stack1);
-    XCTAssertTrue(stack1.isEmpty);
-}
-
-- (void)testIsEqualEmpty {
-    TSStack *stack1 = [[TSStack alloc] init];
-    XCTAssertEqualObjects(stack1, self.stack);
-}
-
 - (void)testIsEqualOneItem {
-    TSStack *stack1 = [[TSStack alloc] init];
-    [stack1 push:@2];
     [self.stack push:@2];
-    XCTAssertEqualObjects(stack1, self.stack);
+    XCTAssertEqualObjects(@[@2], self.stack);
 }
 
 - (void)testIsEqualTwoItems {
-    TSStack *stack1 = [[TSStack alloc] init];
-    [stack1 push:@2];
-    [stack1 push:@4];
     [self.stack push:@2];
     [self.stack push:@4];
-    XCTAssertEqualObjects(stack1, self.stack);
+    NSArray *testArray = @[@2,@4];
+    XCTAssertEqualObjects(self.stack, testArray);
 }
 
 - (void)testIsNotEqualTwoItems {
-    TSStack *stack1 = [[TSStack alloc] init];
-    [stack1 push:@2];
-    [stack1 push:@3];
     [self.stack push:@2];
     [self.stack push:@4];
-    XCTAssertNotEqualObjects(stack1, self.stack);
+    NSArray *testArray = @[@2, @3];
+    XCTAssertNotEqualObjects(self.stack, testArray);
 }
 
 - (void)testDifferentObjects {
@@ -167,7 +158,7 @@
 }
 
 - (void)testConvenienceCreateWithObjects {
-    self.stack = [TSStack stackWithObjects:@[@1,@"2",@3]];
+    self.stack = [@[@1, @"2", @3] mutableCopy];
     XCTAssertNotNil(self.stack);
     XCTAssertEqual(self.stack.count, 3U);
     XCTAssertEqualObjects(self.stack.pop, @3);

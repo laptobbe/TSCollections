@@ -85,4 +85,61 @@
     XCTAssertEqualObjects(self.array, testArr);
 }
 
+- (void)testRemovingObject {
+    [self.array setObject:@15 atRow:0 column:0];
+    [self.array removeObjectAtRow:0 column:0];
+    XCTAssertEqualObjects([NSNull null], self.array[0][0]);
+}
+
+- (void)testRemoveRow {
+    [self.array setObject:@73 atRow:0 column:0];
+    [self.array setObject:@12 atRow:1 column:0];
+    [self.array setObject:@14 atRow:0 column:1];
+    [self.array removeRow:0];
+    XCTAssertEqualObjects([NSNull null], self.array[0][0]);
+    XCTAssertEqualObjects([NSNull null], self.array[0][1]);
+    XCTAssertEqualObjects(@12, self.array[1][0]);
+}
+
+- (void)testRemoveColumn {
+    [self.array setObject:@73 atRow:0 column:0];
+    XCTAssertEqual(self.array.rowCount, 1);
+    [self.array setObject:@12 atRow:1 column:0];
+    [self.array setObject:@14 atRow:0 column:1];
+    [self.array removeColumn:0];
+    XCTAssertEqualObjects([NSNull null], self.array[0][0]);
+    XCTAssertEqualObjects([NSNull null], self.array[0][0]);
+    XCTAssertEqualObjects(@14, self.array[0][1]);
+}
+
+- (void)testCallRemoveOnNoneExistingCoordinate {
+    [self.array setObject:@73 atRow:0 column:0];
+    XCTAssertNoThrow([self.array removeObjectAtRow:1 column:1]);
+}
+
+- (void)testCallRemoveOnNoneExistingRow {
+    [self.array setObject:@73 atRow:0 column:0];
+    XCTAssertNoThrow([self.array removeRow:1]);
+}
+
+- (void)testCallRemoveOnNoneExistingColumn {
+    [self.array setObject:@73 atRow:0 column:0];
+    XCTAssertNoThrow([self.array removeColumn:1]);
+}
+
+- (void)testCounts {
+    [self.array setObject:@14 atRow:2 column:4];
+    XCTAssertEqual(self.array.rowCount, 3);
+    XCTAssertEqual(self.array.columnCount, 5);
+}
+
+- (void)testRemoveAllObjects {
+    [self.array setObject:@5 atRow:4 column:2];
+    [self.array setObject:@9 atRow:2 column:3];
+    XCTAssertEqual(self.array.rowCount, 5);
+    XCTAssertEqual(self.array.columnCount, 4);
+    [self.array removeAllObjects];
+    XCTAssertEqual(self.array.rowCount, 0);
+    XCTAssertEqual(self.array.columnCount, 0);
+}
 @end
