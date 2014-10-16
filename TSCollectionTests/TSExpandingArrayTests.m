@@ -107,31 +107,6 @@
     XCTAssertEqualObjects(self.array[14], [NSNull null]);
 }
 
-- (void)testFilteringExpandingArray {
-    self.array[3] = @13;
-    TSExpandingArray *filtered = [self.array filterWithBlock:^BOOL(id object) {
-        return [object isKindOfClass:[NSNumber class]];
-    }];
-    XCTAssertEqual(filtered.count, 1U);
-    XCTAssertEqualObjects(filtered[0], @13);
-}
-
-- (void)testMappingExpandingArray {
-    self.array[0] = @1;
-    self.array[2] = @4;
-    self.array[4] = @6;
-    TSExpandingArray *mapped = [self.array mapWithBlock:^id(NSNumber *object) {
-        return [object isKindOfClass:[NSNumber class]] ? @(object.intValue * 2) : @0;
-    }];
-    XCTAssertTrue([mapped isKindOfClass:[TSExpandingArray class]]);
-    XCTAssertEqual(mapped.count, 5U);
-    XCTAssertEqualObjects(mapped[0], @2);
-    XCTAssertEqualObjects(mapped[1], @0);
-    XCTAssertEqualObjects(mapped[2], @8);
-    XCTAssertEqualObjects(mapped[3], @0);
-    XCTAssertEqualObjects(mapped[4], @12);
-}
-
 - (void)testRemovingAllObjects {
     self.array[1]= @5;
     XCTAssertEqual(self.array.count, 2);

@@ -13,10 +13,6 @@
 
 @implementation TSExpandingArray
 
-+ (void)load {
-    [TSCollectionOperations addCollectionOperationsToClass:[self class]];
-}
-
 + (instancetype)arrayWithSize:(NSUInteger)size {
     return [[TSExpandingArray alloc] initWithSize:size];
 }
