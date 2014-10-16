@@ -74,6 +74,11 @@
     [self setObject:obj atIndex:idx];
 }
 
+- (NSArray *)allObjects {
+    return [NSArray arrayWithArray:self.backingArray];
+}
+
+
 #pragma mark -
 #pragma mark Expanding
 - (void)expandIfNecessaryToSize:(NSUInteger)idx {
@@ -101,4 +106,8 @@
     return [self.backingArray countByEnumeratingWithState:state objects:buffer count:len];
 }
 
+- (void)removeObjectAtIndex:(NSUInteger)index {
+    [self expandIfNecessaryToSize:index+1];
+    self.backingArray[index] = [self.fillOutClass new];
+}
 @end

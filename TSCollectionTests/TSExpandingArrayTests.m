@@ -79,7 +79,7 @@
     XCTAssertEqualObjects(self.array[14], @8);
 }
 
-- (void)testSetningAndGettingOtherIndex {
+- (void)testSettingAndGettingOtherIndex {
     self.array[1] = @1;
     XCTAssertEqualObjects([NSNull null], self.array[2]);
 }
@@ -98,6 +98,15 @@
     XCTAssertEqualObjects(array1, array2);
 }
 
+- (void)testDeletingObject {
+    self.array[6] = @34;
+    self.array[14] = @8;
+    XCTAssertEqual(self.array.count, 15U);
+    [self.array removeObjectAtIndex:14];
+    XCTAssertEqual(self.array.count, 15U);
+    XCTAssertEqualObjects(self.array[14], [NSNull null]);
+}
+
 - (void)testFilteringExpandingArray {
     self.array[3] = @13;
     TSExpandingArray *filtered = [self.array filterWithBlock:^BOOL(id object) {
@@ -114,6 +123,7 @@
     TSExpandingArray *mapped = [self.array mapWithBlock:^id(NSNumber *object) {
         return [object isKindOfClass:[NSNumber class]] ? @(object.intValue * 2) : @0;
     }];
+    XCTAssertTrue([mapped isKindOfClass:[TSExpandingArray class]]);
     XCTAssertEqual(mapped.count, 5U);
     XCTAssertEqualObjects(mapped[0], @2);
     XCTAssertEqualObjects(mapped[1], @0);

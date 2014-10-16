@@ -61,4 +61,19 @@
     return [self objectsAtRow:idx];
 }
 
+- (void)removeObjectAtRow:(NSUInteger)row column:(NSUInteger)column {
+    [self setObject:[NSNull null] atRow:row column:column];
+}
+
+- (void)removeRow:(NSUInteger)row {
+    for (int column = 0; column < self.columns.count; column++) {
+        [self setObject:[NSNull null] atRow:row column:column];
+    }
+}
+
+- (void)removeColumn:(NSUInteger)column {
+    for (int row = 0; row < self.rows.count; row++) {
+        [self setObject:[NSNull null] atRow:row column:column];
+    }
+}
 @end
