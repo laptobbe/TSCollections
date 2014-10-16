@@ -3,9 +3,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TSCollectionOperations.h"
 
-
-@interface TSExpandingArray : NSObject <NSFastEnumeration>
+@interface TSExpandingArray : NSObject <NSFastEnumeration, TSCollectionOperations>
 
 - (NSUInteger)count;
 
@@ -15,13 +15,19 @@
 
 - (id)initWithSize:(NSUInteger)size fillOutClass:(Class)class;
 
-+ (TSExpandingArray *)arrayWithSize:(NSUInteger)size;
+- (instancetype)initWithArray:(NSArray *)array;
 
-+ (TSExpandingArray *)arrayWithSize:(NSUInteger)size fillOutClass:(Class)class;
++ (instancetype)arrayWithSize:(NSUInteger)size;
+
++ (instancetype)arrayWithSize:(NSUInteger)size fillOutClass:(Class)class;
 
 - (void)setObject:(id)obj atIndex:(NSUInteger)idx;
 
 - (id)objectAtIndexedSubscript:(NSUInteger)idx;
 
 - (void)setObject:(id)obj atIndexedSubscript:(NSUInteger)idx;
+
+- (NSArray *)allObjects;
+
+- (void)removeObjectAtIndex:(NSUInteger)index;
 @end

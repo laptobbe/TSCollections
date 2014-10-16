@@ -13,16 +13,20 @@
 
 @implementation TSExpandingArray
 
-+ (TSExpandingArray *)arrayWithSize:(NSUInteger)size {
++ (void)load {
+    [TSCollectionOperations addCollectionOperationsToClass:[self class]];
+}
+
++ (instancetype)arrayWithSize:(NSUInteger)size {
     return [[TSExpandingArray alloc] initWithSize:size];
 }
 
-+ (TSExpandingArray *)arrayWithSize:(NSUInteger)size fillOutClass:(Class)class {
++ (instancetype)arrayWithSize:(NSUInteger)size fillOutClass:(Class)class {
     return [[TSExpandingArray alloc] initWithSize:size fillOutClass:class];
 }
 
 
-- (id)initWithSize:(NSUInteger)size fillOutClass:(Class)class {
+- (instancetype)initWithSize:(NSUInteger)size fillOutClass:(Class)class {
     self = [super init];
     if (self) {
         _fillOutClass = class;
@@ -31,12 +35,20 @@
     return self;
 }
 
-- (id)initWithSize:(NSUInteger)size {
+- (instancetype)initWithSize:(NSUInteger)size {
     return [self initWithSize:size fillOutClass:[NSNull class]];
 }
 
-- (id)init {
+- (instancetype)init {
     return [self initWithSize:0];
+}
+
+- (instancetype)initWithArray:(NSArray *)array {
+    self = [self init];
+    if (self) {
+        _backingArray = [array mutableCopy];
+    }
+    return self;
 }
 
 - (NSUInteger)count {
@@ -61,6 +73,11 @@
 - (void)setObject:(id)obj atIndexedSubscript:(NSUInteger)idx {
     [self setObject:obj atIndex:idx];
 }
+
+- (NSArray *)allObjects {
+    return [NSArray arrayWithArray:self.backingArray];
+}
+
 
 #pragma mark -
 #pragma mark Expanding
@@ -89,4 +106,8 @@
     return [self.backingArray countByEnumeratingWithState:state objects:buffer count:len];
 }
 
+- (void)removeObjectAtIndex:(NSUInteger)index {
+    [self expandIfNecessaryToSize:index+1];
+    self.backingArray[index] = [self.fillOutClass new];
+}
 @end

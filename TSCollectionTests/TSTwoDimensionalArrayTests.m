@@ -85,4 +85,44 @@
     XCTAssertEqualObjects(self.array, testArr);
 }
 
+- (void)testRemovingObject {
+    [self.array setObject:@15 atRow:0 column:0];
+    [self.array removeObjectAtRow:0 column:0];
+    XCTAssertEqualObjects([NSNull null], self.array[0][0]);
+}
+
+- (void)testRemoveRow {
+    [self.array setObject:@73 atRow:0 column:0];
+    [self.array setObject:@12 atRow:1 column:0];
+    [self.array setObject:@14 atRow:0 column:1];
+    [self.array removeRow:0];
+    XCTAssertEqualObjects([NSNull null], self.array[0][0]);
+    XCTAssertEqualObjects([NSNull null], self.array[0][1]);
+    XCTAssertEqualObjects(@12, self.array[1][0]);
+}
+
+- (void)testRemoveColumn {
+    [self.array setObject:@73 atRow:0 column:0];
+    [self.array setObject:@12 atRow:1 column:0];
+    [self.array setObject:@14 atRow:0 column:1];
+    [self.array removeColumn:0];
+    XCTAssertEqualObjects([NSNull null], self.array[0][0]);
+    XCTAssertEqualObjects([NSNull null], self.array[0][0]);
+    XCTAssertEqualObjects(@14, self.array[0][1]);
+}
+
+- (void)testCallRemoveOnNoneExistingCoordinate {
+    [self.array setObject:@73 atRow:0 column:0];
+    XCTAssertNoThrow([self.array removeObjectAtRow:1 column:1]);
+}
+
+- (void)testCallRemoveOnNoneExistingRow {
+    [self.array setObject:@73 atRow:0 column:0];
+    XCTAssertNoThrow([self.array removeRow:1]);
+}
+
+- (void)testCallRemoveOnNoneExistingColumn {
+    [self.array setObject:@73 atRow:0 column:0];
+    XCTAssertNoThrow([self.array removeColumn:1]);
+}
 @end
