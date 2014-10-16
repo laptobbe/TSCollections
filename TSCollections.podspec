@@ -14,11 +14,11 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.subspec "TSStack" do |sp|
-    sp.source_files = "Classes/TSStack.{h,m}"
+    sp.source_files = "Classes/NSMutableArray+TSStack.{h,m}"
   end
 
   s.subspec "TSQueue" do |os|
-    os.source_files = "Classes/TSQueue.{h,m}"
+    os.source_files = "Classes/NSMutableArray+TSQueue.{h,m}"
   end
 
   s.subspec "TSExpandingArray" do |a|
