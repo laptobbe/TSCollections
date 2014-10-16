@@ -103,6 +103,7 @@
 
 - (void)testRemoveColumn {
     [self.array setObject:@73 atRow:0 column:0];
+    XCTAssertEqual(self.array.rowCount, 1);
     [self.array setObject:@12 atRow:1 column:0];
     [self.array setObject:@14 atRow:0 column:1];
     [self.array removeColumn:0];
@@ -124,5 +125,21 @@
 - (void)testCallRemoveOnNoneExistingColumn {
     [self.array setObject:@73 atRow:0 column:0];
     XCTAssertNoThrow([self.array removeColumn:1]);
+}
+
+- (void)testCounts {
+    [self.array setObject:@14 atRow:2 column:4];
+    XCTAssertEqual(self.array.rowCount, 3);
+    XCTAssertEqual(self.array.columnCount, 5);
+}
+
+- (void)testRemoveAllObjects {
+    [self.array setObject:@5 atRow:4 column:2];
+    [self.array setObject:@9 atRow:2 column:3];
+    XCTAssertEqual(self.array.rowCount, 5);
+    XCTAssertEqual(self.array.columnCount, 4);
+    [self.array removeAllObjects];
+    XCTAssertEqual(self.array.rowCount, 0);
+    XCTAssertEqual(self.array.columnCount, 0);
 }
 @end

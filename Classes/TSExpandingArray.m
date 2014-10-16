@@ -110,4 +110,9 @@
     [self expandIfNecessaryToSize:index+1];
     self.backingArray[index] = [self.fillOutClass new];
 }
+
+- (void)removeAllObjects{
+    [self.backingArray removeAllObjects];
+}
+
 @end

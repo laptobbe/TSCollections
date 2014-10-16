@@ -29,5 +29,7 @@
 
 - (NSArray *)allObjects;
 
+- (void)removeAllObjects;
+
 - (void)removeObjectAtIndex:(NSUInteger)index;
 @end

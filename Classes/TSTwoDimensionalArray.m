@@ -76,4 +76,17 @@
         [self setObject:[NSNull null] atRow:row column:column];
     }
 }
+
+- (NSUInteger)rowCount{
+	return [self.rows count];
+}
+
+- (NSUInteger)columnCount {
+    return [self.columns count];
+}
+
+- (void)removeAllObjects{
+	[self.rows removeAllObjects];
+	[self.columns removeAllObjects];
+}
 @end
