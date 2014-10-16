@@ -1,7 +1,8 @@
 Pod::Spec.new do |s|
 
   s.name         = "TSCollections"
-  s.version      = "0.3
+  s.version      = "0.3.1
+
 "
   s.summary      = "TSCollections is a set of convenience classes that represents common collection patterns. Such as a stack or queue."
   s.description  = <<-DESC
