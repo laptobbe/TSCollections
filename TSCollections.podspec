@@ -4,9 +4,11 @@ Pod::Spec.new do |s|
   s.version      = "0.3.1
 
 "
-  s.summary      = "TSCollections is a set of convenience classes that represents common collection patterns. Such as a stack or queue."
+  s.summary      = "Implementation of stack, queue, expanding array and two dimensinal array"
   s.description  = <<-DESC
-                   TSCollections is a set of convenience classes that represents common collection patterns. Such as a stack or queue.
+                   TSCollections inclundes implemenations for stack, queue, expanding array and 
+		two dimensional array (implemented with the expanding arrays). There is a subspec 
+		for each collecitons so you only have to include what you need in your code.
                    DESC
   s.homepage     = "https://github.com/laptobbe/TSCollections"
   s.license      = 'MIT'
