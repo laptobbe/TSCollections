@@ -24,7 +24,8 @@
 
 /* Begin PBXFileReference section */
 		2E72128B158D413FA5802BD5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4F0204DBCFF4B1597A2249F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		53FD4659043F624A5BCBC221 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		72C2DC9D8C02BEA9925CAEC0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CC3C7189DD8BD1796E2C0224 /* TSExpandingArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSExpandingArray.h; sourceTree = "<group>"; };
 		CC3C71E82221CFFD2CF2F65D /* TSTwoDimensionalArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTwoDimensionalArrayTests.m; sourceTree = "<group>"; };
 		CC3C73ECC746E9DC83AFB4AC /* TSTwoDimensionalArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTwoDimensionalArray.m; sourceTree = "<group>"; };
@@ -68,7 +69,7 @@
 				F6FE844C18CAFF0600FD227D /* TSCollectionTests */,
 				F6FE844518CAFF0600FD227D /* Frameworks */,
 				F6FE844418CAFF0600FD227D /* Products */,
-				B4F0204DBCFF4B1597A2249F /* Pods.xcconfig */,
+				FB5E90593CC2684E927E2DFF /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +127,15 @@
 				CC3C7189DD8BD1796E2C0224 /* TSExpandingArray.h */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		FB5E90593CC2684E927E2DFF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				72C2DC9D8C02BEA9925CAEC0 /* Pods.debug.xcconfig */,
+				53FD4659043F624A5BCBC221 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +209,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E237DF5C29CF4E7DABDF107D /* Check Pods Manifest.lock */ = {
@@ -263,7 +273,7 @@
 		};
 		F6FE845618CAFF0600FD227D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4F0204DBCFF4B1597A2249F /* Pods.xcconfig */;
+			baseConfigurationReference = 72C2DC9D8C02BEA9925CAEC0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
@@ -312,7 +322,7 @@
 		};
 		F6FE845718CAFF0600FD227D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4F0204DBCFF4B1597A2249F /* Pods.xcconfig */;
+			baseConfigurationReference = 53FD4659043F624A5BCBC221 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
