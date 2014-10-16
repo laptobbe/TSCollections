@@ -65,8 +65,12 @@
 	return [self.rows count];
 }
 
+- (NSUInteger)columnCount {
+    return [self.columns count];
+}
+
 - (void)removeAllObjects{
-	[_rows removeAllObjects];
-	[_columns removeAllObjects];
+	[self.rows removeAllObjects];
+	[self.columns removeAllObjects];
 }
 @end

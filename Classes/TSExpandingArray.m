@@ -90,7 +90,7 @@
 }
 
 - (void)removeAllObjects{
-    [_backingArray removeAllObjects];
+    [self.backingArray removeAllObjects];
 }
 
 @end

@@ -98,4 +98,11 @@
     XCTAssertEqualObjects(array1, array2);
 }
 
+- (void)testRemovingAllObjects {
+    self.array[1]= @5;
+    XCTAssertEqual(self.array.count, 2);
+    [self.array removeAllObjects];
+    XCTAssertEqual(self.array.count, 0);
+}
+
 @end

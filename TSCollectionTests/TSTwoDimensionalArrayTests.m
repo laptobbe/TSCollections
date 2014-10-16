@@ -85,4 +85,20 @@
     XCTAssertEqualObjects(self.array, testArr);
 }
 
+- (void)testCounts {
+    [self.array setObject:@14 atRow:2 column:4];
+    XCTAssertEqual(self.array.rowCount, 3);
+    XCTAssertEqual(self.array.columnCount, 5);
+}
+
+- (void)testRemoveAllObjects {
+    [self.array setObject:@5 atRow:4 column:2];
+    [self.array setObject:@9 atRow:2 column:3];
+    XCTAssertEqual(self.array.rowCount, 5);
+    XCTAssertEqual(self.array.columnCount, 4);
+    [self.array removeAllObjects];
+    XCTAssertEqual(self.array.rowCount, 0);
+    XCTAssertEqual(self.array.columnCount, 0);
+}
+
 @end
