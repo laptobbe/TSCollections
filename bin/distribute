@@ -25,4 +25,9 @@ system "git commit -m 'Updated version to #{version}'"
 
 system "git flow release finish #{version}" or abort "Could not finish release from git flow"
 
+system "git push origin develop" or abort "Could not push dev branch"
+system "git push origin master" or abort "Could not push master branch"
+system "git push origin master" or abort "Could not push master branch"
+system "git push origin #{version}" or abort "Could not push version tag"
+
 system "pod trunk push"
